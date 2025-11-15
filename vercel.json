@@ -1,5 +1,14 @@
 {
+  "functions": {
+    "api/handler.mjs": {
+      "runtime": "edge",
+      "regions": ["sin1", "iad1", "fra1"]  // atau pilih region yang dekat
+    }
+  },
   "rewrites": [
-    { "source": "/(.*)", "destination": "api/handler" }
+    {
+      "source": "/v1/(.*)",
+      "destination": "/api/handler.mjs"
+    }
   ]
 }
